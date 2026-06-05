@@ -56,4 +56,20 @@ src/
 npm run build
 npm run preview
 ```
-# gamehub
+
+本地预览 GitHub Pages 构建产物：
+
+```bash
+npm run build:gh-pages
+npm run preview
+```
+
+浏览器访问 `http://localhost:4173/gamehub/`。
+
+## 部署到 GitHub Pages
+
+推送 `main` 分支后，GitHub Actions 会自动构建并发布到 Pages。
+
+首次使用前，在仓库 **Settings → Pages → Build and deployment** 中将 Source 设为 **GitHub Actions**。
+
+站点地址：`https://<用户名>.github.io/gamehub/`
