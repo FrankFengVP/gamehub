@@ -1,0 +1,214 @@
+.imitation-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.imitation-hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  z-index: 10;
+}
+
+.imitation-hud-top,
+.imitation-hud-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.imitation-stats {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.imitation-stat {
+  background: rgba(12, 14, 20, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.45rem 0.85rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.imitation-stat strong {
+  color: var(--accent);
+  margin-left: 0.35rem;
+}
+
+.imitation-panel {
+  pointer-events: auto;
+  align-self: center;
+  text-align: center;
+  max-width: 360px;
+  padding: 1.5rem 1.75rem;
+  background: rgba(12, 14, 20, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.imitation-panel h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.imitation-panel p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.55;
+}
+
+.imitation-panel-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.imitation-hint {
+  pointer-events: none;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  background: rgba(12, 14, 20, 0.7);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.imitation-hint--active {
+  color: var(--accent);
+  border-color: rgba(110, 231, 183, 0.35);
+}
+
+.imitation-legend {
+  pointer-events: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imitation-legend-item {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(12, 14, 20, 0.7);
+  border: 1px solid var(--border);
+}
+
+.imitation-legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.imitation-fail h2 {
+  color: var(--danger);
+}
+
+/* 手机端触控色块 */
+.imitation-touch-pads {
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  padding: 0.75rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(12, 14, 20, 0.92);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.imitation-touch-pad {
+  min-height: 72px;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--pad-color);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.12s, box-shadow 0.12s, filter 0.12s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.imitation-touch-pad:active,
+.imitation-touch-pad--active {
+  transform: scale(0.95);
+  filter: brightness(1.25);
+  box-shadow:
+    0 0 24px var(--pad-glow),
+    0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 640px) {
+  .imitation-hud--mobile {
+    padding: 0.6rem 0.75rem;
+    padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .imitation-hud--mobile .imitation-hud-top {
+    width: 100%;
+  }
+
+  .imitation-stats {
+    gap: 0.4rem;
+  }
+
+  .imitation-stat {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  .imitation-stat--hide-mobile {
+    display: none;
+  }
+
+  .imitation-panel {
+    max-width: calc(100% - 1rem);
+    padding: 1.25rem 1rem;
+    margin: auto 0;
+  }
+
+  .imitation-panel h2 {
+    font-size: 1.15rem;
+  }
+
+  .imitation-panel p {
+    font-size: 0.88rem;
+  }
+
+  .imitation-hint {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.75rem;
+    text-align: center;
+    max-width: calc(100% - 1rem);
+  }
+
+  .imitation-hud--mobile:not(:has(.imitation-touch-pads)) {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+}
