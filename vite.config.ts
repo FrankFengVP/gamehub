@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig(({ mode }) => ({
-  base: mode === 'ghpages' ? '/gamehub/' : '/',
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {
