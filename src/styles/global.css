@@ -292,6 +292,14 @@ button {
   color: var(--text);
 }
 
+.adsense-unit {
+  margin: 1.5rem auto;
+  max-width: 1100px;
+  min-height: 90px;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
 @media (max-width: 640px) {
   .hub {
     padding: 1.5rem 1rem calc(2.5rem + var(--safe-bottom));
